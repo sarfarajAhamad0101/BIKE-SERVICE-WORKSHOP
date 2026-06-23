@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #050505;
+  --orange: #ff6b00;
+  --orange2: #ff9a3c;
+  --white: #f0f0f0;
+  --gray: #0f0f0f;
+  --gray2: #1a1a1a;
+  --silver: #888;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+.app { position: relative; }
+
+/* ── SCROLL REVEAL ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Delay helpers */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* ── SHARED SECTION STYLES ── */
+.sec-eye {
+  font-size: 0.65rem;
+  color: var(--orange);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.sec-h {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+.sec-h em { color: var(--orange); font-style: normal; }
+.sec-p {
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.9;
+  margin-top: 1rem;
+}
+
+/* ── 3D CARD TILT ── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease;
+  will-change: transform;
+}
+
+/* ── GLOW LINE ── */
+.glow-line {
+  width: 60px;
+  height: 3px;
+  background: var(--orange);
+  box-shadow: 0 0 12px var(--orange);
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .reveal, .reveal-left, .reveal-right { transform: translateY(30px); }
+}

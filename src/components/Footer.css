@@ -1,0 +1,23 @@
+.footer {
+  position: relative; z-index: 1;
+  background: #030303;
+  border-top: 1px solid #111;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.ft-inner { max-width: 700px; margin: 0 auto; }
+.ft-brand {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.4rem; font-weight: 700; color: #ff6b00;
+}
+.ft-line { width: 40px; height: 2px; background: #ff6b00; margin: 1rem auto; box-shadow: 0 0 8px #ff6b00; }
+.ft-links {
+  display: flex; justify-content: center; gap: 2rem;
+  flex-wrap: wrap; margin-bottom: 1.2rem;
+}
+.ft-links a {
+  color: #333; font-size: 0.78rem; text-decoration: none;
+  letter-spacing: 1px; transition: color 0.2s;
+}
+.ft-links a:hover { color: #ff6b00; }
+.ft-copy { font-size: 0.68rem; color: #1a1a1a; }

@@ -1,0 +1,94 @@
+.owner-section {
+  position: relative; z-index: 1;
+  padding: 7rem 2rem;
+  background: linear-gradient(180deg, #050505 0%, #0a0500 50%, #050505 100%);
+}
+.owner-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.3fr;
+  gap: 5rem; align-items: center;
+}
+
+/* ── 3D Photo Card ── */
+.owner-card-wrap { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+.owner-card {
+  position: relative;
+  width: 100%; max-width: 360px;
+  border-radius: 8px; overflow: hidden;
+  border: 1px solid rgba(255,107,0,0.15);
+  background: #0d0d0d;
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
+  cursor: default;
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.owner-card:hover {
+  box-shadow: 0 30px 80px rgba(255,107,0,0.15), 0 0 0 1px rgba(255,107,0,0.2);
+}
+.card-glow {
+  position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  background: radial-gradient(circle at 30% 20%, rgba(255,107,0,0.08) 0%, transparent 60%);
+}
+.owner-photo {
+  width: 100%; height: auto; display: block;
+  object-fit: cover; object-position: top center;
+}
+.card-badge {
+  position: absolute; bottom: 1.2rem; left: 1.2rem;
+  background: rgba(5,5,5,0.9); border: 1px solid rgba(255,107,0,0.3);
+  border-radius: 20px; padding: 0.4rem 1rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.7rem; color: #ff6b00; letter-spacing: 1px;
+  backdrop-filter: blur(8px);
+}
+.badge-icon { font-size: 0.9rem; }
+
+.owner-name-plate { text-align: center; }
+.owner-name {
+  font-family: 'Rajdhani', sans-serif; font-size: 1.8rem;
+  font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 2px;
+}
+.owner-title { font-size: 0.72rem; color: #ff6b00; letter-spacing: 3px; text-transform: uppercase; margin-top: 4px; }
+
+/* ── Content ── */
+.owner-content {}
+.owner-quote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 3px solid #ff6b00;
+  background: rgba(255,107,0,0.04);
+  color: #888; font-size: 0.85rem; font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+.owner-creds {
+  display: flex; gap: 2rem; margin: 2rem 0;
+}
+.cred { display: flex; flex-direction: column; }
+.cred-num {
+  font-family: 'Rajdhani', sans-serif; font-size: 2rem;
+  font-weight: 700; color: #ff6b00; line-height: 1;
+}
+.cred-label { font-size: 0.65rem; color: #333; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+
+.owner-contact-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.ocb-call {
+  background: transparent; border: 1px solid #333; color: #888;
+  padding: 0.75rem 1.8rem; border-radius: 3px; text-decoration: none;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.ocb-call:hover { border-color: #ff6b00; color: #ff6b00; }
+.ocb-wa {
+  background: #25d366; color: #fff;
+  padding: 0.75rem 1.8rem; border-radius: 3px; text-decoration: none;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  transition: background 0.2s; box-shadow: 0 0 20px rgba(37,211,102,0.2);
+}
+.ocb-wa:hover { background: #1da851; box-shadow: 0 0 40px rgba(37,211,102,0.4); }
+
+@media(max-width:768px) {
+  .owner-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .owner-card { max-width: 100%; }
+}

@@ -1,0 +1,105 @@
+:root {
+  --black: #050505;
+  --orange: #ff6b00;
+  --orange2: #ff9a3c;
+  --white: #f0f0f0;
+  --gray: #0f0f0f;
+  --gray2: #1a1a1a;
+  --gray3: #222;
+  --silver: #888;
+}
+
+.app { position: relative; min-height: 100vh; }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.from-left  { transform: translateX(-60px); }
+.reveal.from-right { transform: translateX(60px); }
+.reveal.from-bottom{ transform: translateY(60px); }
+.reveal.scale-in   { transform: scale(0.85); }
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+.reveal.delay-5 { transition-delay: 0.5s; }
+.reveal.delay-6 { transition-delay: 0.6s; }
+
+/* ── SECTION COMMON ── */
+.sec-eye {
+  font-size: 0.65rem;
+  color: var(--orange);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.sec-h {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+.sec-h em { color: var(--orange); font-style: normal; }
+.sec-p {
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.9;
+  margin-top: 0.8rem;
+}
+
+/* ── SHIMMER TEXT ── */
+.shimmer-text {
+  background: linear-gradient(90deg, #ff6b00, #ffb347, #ff6b00);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer { 0%{background-position:0%} 100%{background-position:200%} }
+
+/* ── BUTTONS ── */
+.btn-fire {
+  background: var(--orange);
+  color: #000;
+  padding: 0.88rem 2.2rem;
+  border-radius: 3px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  box-shadow: 0 0 30px rgba(255,107,0,0.35);
+  display: inline-block;
+}
+.btn-fire:hover {
+  background: var(--orange2);
+  box-shadow: 0 0 55px rgba(255,107,0,0.6);
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  border: 1px solid #333;
+  color: #888;
+  padding: 0.88rem 2.2rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+
+@media (max-width: 768px) {
+  .sec-h { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+}
